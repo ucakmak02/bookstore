@@ -12,10 +12,10 @@ import {BrowserRouter, Route,Switch} from 'react-router-dom';
 function App() {
   return (
     <BrowserRouter>
-      <Header/>
+      <Header  name='Book Store' />
       <Switch>
-          <Route path='/view' component={ViewPage} />
-          <Route path='/' component={HomePage} />
+          <Route path='/' component={HomePage} exact />
+          <Route path='/view/:key' component={ViewPage} />  
       </Switch>
     </BrowserRouter>
   );

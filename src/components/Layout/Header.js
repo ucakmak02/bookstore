@@ -30,7 +30,7 @@ const useStyles = makeStyles((theme) => ({
     }
 }));
 
-export default function TopNavBar() {
+export default function TopNavBar({name}) {
     const classes = useStyles();
     const [LoggedIn,setLoggedIn] = useState(false)
     const [checked, setChecked] = useState(true);
@@ -42,7 +42,7 @@ export default function TopNavBar() {
                         <MenuIcon />
                     </IconButton>
                     <Typography variant="h6" className={classes.title}>
-                        Book Storage
+                        {name||'Nameless'}
                     </Typography>
                     <div className={classes.leftSection}>
                         <Button component={Link} to={'/'} color="inherit">HOME</Button>
