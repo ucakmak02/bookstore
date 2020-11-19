@@ -35,7 +35,9 @@ export default function MediaCard({ dataKey,name, imagePath, loggedIn, imageHeig
           image={imagePath}
           title={name}
         />
-        <CardContent className={classes.tabText}>
+        <CardContent 
+          style={{width: imageWidth-32 || 200 ,color:'#666102'}}
+        >
           <Typography gutterBottom variant="subtitle1">
             {name}
           </Typography>
