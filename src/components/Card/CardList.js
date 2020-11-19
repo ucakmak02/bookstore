@@ -1,4 +1,5 @@
 import React from 'react'
+
 import Card from './Card'
 import { makeStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
@@ -8,7 +9,6 @@ const useStyles = makeStyles((theme) => ({
         display: 'flex',
         flexWrap: 'wrap',
         justifyContent:'center',
-        gap: 20,
         backgroundColor: '#ffffe6',
     },
     text: {
@@ -24,24 +24,25 @@ const useStyles = makeStyles((theme) => ({
     }
 }));
 
-export default function CardList({ areaTitle, dataBookGenres,imageHeight,imageWidth }) {
+export default function CardList({ areaTitle, dataBooks,imageHeight,imageWidth,routePath }) {
     const styles = useStyles();
     return (
         <div>
             <Typography className={styles.text} gutterBottom variant="h4">
-                {areaTitle || 'Book Genres'}
+                {areaTitle || 'Title'}
             </Typography>
             <div className={styles.container}>
-                {dataBookGenres?.map(
-
-                    (bookGenre) => (
+                {dataBooks?.map(
+                    (data,index) => (
                         <Card
-                            key={bookGenre.key}
-                            name={bookGenre.title}
-                            imagePath={bookGenre.image}
+                            key={index}
+                            dataKey={data.key}
+                            name={data.title}
+                            imagePath={data.image}
                             loggedIn={false}
                             imageHeight={imageHeight}
                             imageWidth={imageWidth}
+                            routePath={routePath}
                         />)
                 )}
             </div>

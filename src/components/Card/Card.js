@@ -8,6 +8,8 @@ import CardMedia from '@material-ui/core/CardMedia';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 
+import {useHistory} from 'react-router-dom'
+
 const useStyles = makeStyles({
   container: {
     margin: 10
@@ -21,19 +23,20 @@ const useStyles = makeStyles({
   }
 });
 
-export default function MediaCard({ name, imagePath, loggedIn, imageHeight, imageWidth }) {
+export default function MediaCard({ dataKey,name, imagePath, loggedIn, imageHeight, imageWidth,routePath }) {
   const classes = useStyles();
+  const history = useHistory();
 
   return (
     <Card className={classes.container}>
-      <CardActionArea>
+      <CardActionArea onClick = {() => {history.push(routePath+'/'+dataKey)}}>
         <CardMedia
           style={{ height: imageHeight || 200, width: imageWidth || 200 }}
           image={imagePath}
           title={name}
         />
         <CardContent className={classes.tabText}>
-          <Typography gutterBottom variant="h5" component="h2">
+          <Typography gutterBottom variant="subtitle1">
             {name}
           </Typography>
         </CardContent>
@@ -42,7 +45,7 @@ export default function MediaCard({ name, imagePath, loggedIn, imageHeight, imag
         <CardActions>
           <Button size="small" color="primary">
             Share
-        </Button>
+          </Button>
           <Button size="small" color="primary">
             Learn More
         </Button>

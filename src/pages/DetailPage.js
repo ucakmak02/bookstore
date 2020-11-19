@@ -1,11 +1,13 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
+/* Import Style */
+import { layoutStyle } from '../components/Layout/theme'
 
 export default function DetailPage() {
     const { key } = useParams();
-    console.log('key:'+key)
+    const styles = layoutStyle();
     return (
-        <div>
+        <div className={styles.container}>
 
         </div>
     )

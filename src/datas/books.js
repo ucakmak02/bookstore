@@ -30,7 +30,7 @@ export const books =
             content:`The liberation of Europe and the destruction of the Third Reich is a story of miscalculation and incomparable courage, of calamity and enduring triumph. In this first volume of the Liberation Trilogy, Rick Atkinson focuses on 1942 and 1943, showing how central the great drama that unfolded in North Africa was to the ultimate victory of the Allied powers and to America's understanding of itself.`
         },
     ],
-    history:[
+    fantasy:[
         {
             id:1,
             title: `The Dragonriders of Pern`,
@@ -49,7 +49,7 @@ export const books =
             id:3,
             title: `The Dark is Rising`,
             author: `Susan Cooper`,
-            image: `https://www.abebooks.com/images/books/fantasy/fellowship-ring.jpg`,
+            image: `https://upload.wikimedia.org/wikipedia/en/c/ca/Darkisrising.jpg`,
             content:`On the Midwinter Day that is his eleventh birthday, Will Stanton discovers a special gift--he is the last of the Old Ones, immortals dedicated to keeping the world from dominations by the forces of evil, the Dark.`
         },
         {
