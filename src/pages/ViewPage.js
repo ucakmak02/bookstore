@@ -21,7 +21,8 @@ export default function ViewPage() {
                 imageHeight={360}
                 imageWidth={250}
                 routePath={'/detail'}
-                loggedIn={false}
+                routeEditPath={'/edit'}
+                loggedIn={true}
             />
             <Link to='/'>Go to Home</Link>
         </Box>

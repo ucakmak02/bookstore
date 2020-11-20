@@ -14,13 +14,16 @@ import { layoutStyle } from '../components/Layout/theme'
 export default function DetailPage() {
     const location = useLocation();
     const styles = layoutStyle();
-    
     const sourceData = location.state
-    
     return (
         <Box className={styles.container}>
             <Title title={'Detail Page'}/>
-            <DetailBox data={sourceData} imageWidth={300} imageHeight={400}/>
+            <DetailBox 
+                data={sourceData} 
+                boolDisable={true}
+                imageWidth={300} 
+                imageHeight={400}
+            />
         </Box>
     )
 }

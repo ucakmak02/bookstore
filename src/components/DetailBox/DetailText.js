@@ -14,13 +14,21 @@ const useStyles = makeStyles((theme) => ({
     text:{
         width:400,
         margin:10,
-    }
+    },
+    inputRoot: {
+        '&$disabled': {
+          color:'#666102',
+          fontWeight:600,
+          fontFamily:'Roboto'
+        },
+      },
+      disabled: {}
   }));
 
-export default function DetailText({data}) {
+export default function DetailText({data,boolDisable}) {
     const classes = useStyles();
     const [values, setValues] = React.useState({
-        name: data?.name,
+        name: data?.title,
         author: data?.author,
         explanation: data?.content,
       });
@@ -35,6 +43,9 @@ export default function DetailText({data}) {
             <Box >
                 <TextField
                     className={classes.text}
+                    inputProps={{
+                        disabled: boolDisable||false,
+                    }}
                     id="filled-multiline-static"
                     name='name'
                     label="Book Name"
@@ -48,6 +59,9 @@ export default function DetailText({data}) {
             <Box>
                 <TextField
                     className={classes.text}
+                    inputProps={{
+                        disabled: boolDisable||false,
+                    }}
                     id="outlined-multiline-flexible"
                     name='author'
                     label="Author"
@@ -60,7 +74,9 @@ export default function DetailText({data}) {
             </Box>
             <Box>
                 <TextField
-                    disabled
+                    inputProps={{
+                        disabled: boolDisable||false,
+                    }}
                     className={classes.text}
                     name='explanation'
                     id="outlined-multiline-flexible"
@@ -68,6 +84,7 @@ export default function DetailText({data}) {
                     multiline
                     onChange={handleChange}
                     rows={6}
+                    rowsMax={10}
                     value={values.explanation}
                     variant="outlined"
                 />

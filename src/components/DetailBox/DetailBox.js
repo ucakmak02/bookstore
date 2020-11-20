@@ -8,20 +8,23 @@ const useStyles = makeStyles((theme) => ({
     container: {
         display: 'flex',
         flexWrap: 'wrap',
-        justifyContent:'center',
+        justifyContent: 'center',
     },
 }));
-export default function DetailBox({data,imageWidth,imageHeight}) {
+export default function DetailBox({ data,boolDisable, imageWidth, imageHeight }) {
     const styles = useStyles();
     return (
         <Box className={styles.container}>
-            <Card 
+            <Card
                 data={data}
                 imageWidth={imageWidth}
                 imageHeight={imageHeight}
                 boolText={false}
             />
-            <DetailText/>
+            <DetailText
+                data={data}
+                boolDisable={boolDisable}
+            />
         </Box>
     )
 }

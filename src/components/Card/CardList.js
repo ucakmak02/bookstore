@@ -13,7 +13,7 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-export default function CardList({ areaTitle, dataBooks,imageHeight,imageWidth,routePath,loggedIn }) {
+export default function CardList({ areaTitle, dataBooks,imageHeight,imageWidth,routePath,routeEditPath,loggedIn }) {
     const styles = useStyles();
     return (
         <Box>
@@ -29,6 +29,7 @@ export default function CardList({ areaTitle, dataBooks,imageHeight,imageWidth,r
                             imageHeight={imageHeight}
                             imageWidth={imageWidth}
                             routePath={routePath}
+                            routeEditPath={routeEditPath}
                         />)
                 )}
             </Box>
