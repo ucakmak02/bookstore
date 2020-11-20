@@ -5,28 +5,28 @@ export const books =
             id:1,
             title: `Grant`,
             author: `Ron Chernow`,
-            image: `https://www.abebooks.com/images/books/best-history-books/9780143110637.jpg`,
+            image: `https://static01.nyt.com/images/2017/10/12/books/12bookchernow1/11bookchernow1-articleLarge.jpg?quality=90&auto=webp`,
             content:`Pulitzer Prize winner Ron Chernow returns with a sweeping and dramatic portrait of one of our most compelling generals and presidents, Ulysses S. Grant. With lucidity, breadth, and meticulousness, Chernow finds the threads that bind Grant's disparate stories together, shedding new light on the man whom Walt Whitman described as "nothing heroic...and yet the greatest hero."`
         },
         {
             id:2,
             title: `Guns, Germs, and Steel: The Fate of Human Societies`,
             author: `Jared Diamond`,
-            image: `https://www.abebooks.com/images/books/best-history-books/9780393354324.jpg`,
+            image: `https://images-na.ssl-images-amazon.com/images/I/51c2SFXFpzL.jpg`,
             content:'Jared Diamond convincingly argues that geographical and environmental factors shaped the modern world. Societies that had had a head start in food production advanced beyond the hunter-gatherer stage, and then developed religion - as well as nasty germs and potent weapons of war - and adventured on sea and land to conquer and decimate preliterate cultures.'
         },
         {
             id:3,
             title: `Genghis Khan and the Making of the Modern World`,
             author: `Jack Weatherford`,
-            image: `https://www.abebooks.com/images/books/best-history-books/9780609809648.jpg`,
+            image: `https://images-na.ssl-images-amazon.com/images/I/91XaRJgLbcL.jpg`,
             content:`In nearly every country the Mongols conquered, they brought an unprecedented rise in cultural communication, expanded trade, and a blossoming of civilization. Vastly more progressive than his European or Asian counterparts, Genghis Khan abolished torture, granted universal religious freedom, and smashed feudal systems of aristocratic privilege.`
         },
         {
             id:4,
             title: `An Army at Dawn: The War in North Africa, 1942-1943`,
             author: `Rick Atkinson`,
-            image: `https://www.abebooks.com/images/books/best-history-books/9780805087246.jpg`,
+            image: `https://img1.od-cdn.com/ImageType-100/5054-1/%7BD2E61F8C-CD18-4339-B63B-5E7AA01555D6%7DImg100.jpg`,
             content:`The liberation of Europe and the destruction of the Third Reich is a story of miscalculation and incomparable courage, of calamity and enduring triumph. In this first volume of the Liberation Trilogy, Rick Atkinson focuses on 1942 and 1943, showing how central the great drama that unfolded in North Africa was to the ultimate victory of the Allied powers and to America's understanding of itself.`
         },
     ],

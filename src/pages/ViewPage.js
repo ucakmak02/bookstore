@@ -1,4 +1,5 @@
 import React from 'react'
+import Box from '@material-ui/core/Box';
 import { useParams } from 'react-router-dom';
 import {Link} from 'react-router-dom'
 /* Import Style */
@@ -13,15 +14,16 @@ export default function ViewPage() {
     const styles = layoutStyle();
     console.log(key)
     return (
-        <div className={styles.container}>
+        <Box className={styles.container}>
             <CardList
                 dataBooks={books? books[key]?books[key]:null:null}
                 areaTitle='Book List'
                 imageHeight={360}
                 imageWidth={250}
-                routePath={'/view'}
+                routePath={'/detail'}
+                loggedIn={false}
             />
             <Link to='/'>Go to Home</Link>
-        </div>
+        </Box>
     )
 }

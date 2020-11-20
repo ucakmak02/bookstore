@@ -8,7 +8,7 @@ import CardMedia from '@material-ui/core/CardMedia';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 
-import {useHistory} from 'react-router-dom'
+import {Link} from 'react-router-dom'
 
 const useStyles = makeStyles({
   container: {
@@ -23,27 +23,29 @@ const useStyles = makeStyles({
   }
 });
 
-export default function MediaCard({ dataKey,name, imagePath, loggedIn, imageHeight, imageWidth,routePath }) {
+export default function MediaCard({ data,loggedIn, boolText,imageHeight, imageWidth,routePath }) {
   const classes = useStyles();
-  const history = useHistory();
-
+  console.log(boolText)
   return (
     <Card className={classes.container}>
-      <CardActionArea onClick = {() => {history.push(routePath+'/'+dataKey)}}>
+      <Link to={{pathname: routePath+'/'+data.id,state:data}} params={{ data: data }} style={{ textDecoration: 'none' }}>
+      <CardActionArea>
         <CardMedia
           style={{ height: imageHeight || 200, width: imageWidth || 200 }}
-          image={imagePath}
-          title={name}
+          image={data.image}
+          title={data.title}
         />
+        {boolText ?
         <CardContent 
           style={{width: imageWidth-32 || 200 ,color:'#666102'}}
         >
           <Typography gutterBottom variant="subtitle1">
-            {name}
+            {data.title}
           </Typography>
-        </CardContent>
+        </CardContent>: null}
       </CardActionArea>
-      {loggedIn ?
+      </Link>
+      {loggedIn||false ?
         <CardActions>
           <Button size="small" color="primary">
             Share

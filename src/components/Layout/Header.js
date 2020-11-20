@@ -1,5 +1,6 @@
 import React,{useState} from 'react';
 import { makeStyles } from '@material-ui/core/styles';
+import Box from '@material-ui/core/Box';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
@@ -35,7 +36,7 @@ export default function TopNavBar({name}) {
     const [LoggedIn,setLoggedIn] = useState(false)
     const [checked, setChecked] = useState(true);
     return (
-        <div className={classes.root}>
+        <Box className={classes.root}>
             <AppBar position="static">
                 <Toolbar className={classes.toolbarStyle}>
                     <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
@@ -62,7 +63,7 @@ export default function TopNavBar({name}) {
                     </div>           
                 </Toolbar>
             </AppBar>
-        </div>
+        </Box>
     )
 }
 

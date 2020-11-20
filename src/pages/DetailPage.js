@@ -1,13 +1,26 @@
 import React from 'react';
+import { useLocation } from 'react-router-dom';
+/* Import Components */
+import Box from '@material-ui/core/Box';
+import Title from '../components/Title/Title'
+import DetailBox from '../components/DetailBox/DetailBox'
+/* import DetailText from '../components/DetailBox/DetailText' */
+
 /* Import Style */
 import { layoutStyle } from '../components/Layout/theme'
 
+
+
 export default function DetailPage() {
-
+    const location = useLocation();
     const styles = layoutStyle();
+    
+    const sourceData = location.state
+    
     return (
-        <div className={styles.container}>
-
-        </div>
+        <Box className={styles.container}>
+            <Title title={'Detail Page'}/>
+            <DetailBox data={sourceData} imageWidth={300} imageHeight={400}/>
+        </Box>
     )
 }

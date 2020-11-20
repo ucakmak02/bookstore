@@ -1,8 +1,8 @@
 import React from 'react'
-
+import Box from '@material-ui/core/Box';
 import Card from './Card'
+import Title from '../Title/TitleBase'
 import { makeStyles } from '@material-ui/core/styles';
-import Typography from '@material-ui/core/Typography';
 
 const useStyles = makeStyles((theme) => ({
     container: {
@@ -11,41 +11,27 @@ const useStyles = makeStyles((theme) => ({
         justifyContent:'center',
         backgroundColor: '#ffffe6',
     },
-    text: {
-        color: '#666102',
-        marginTop: 30,
-        marginBottom: 0,
-        padding: 10,
-        fontFamily: 'Roboto',
-        textDecoration: 'underline',
-        backgroundColor: '#ffffb3',
-        borderTopLeftRadius: 20,
-        borderTopRightRadius: 20
-    }
 }));
 
-export default function CardList({ areaTitle, dataBooks,imageHeight,imageWidth,routePath }) {
+export default function CardList({ areaTitle, dataBooks,imageHeight,imageWidth,routePath,loggedIn }) {
     const styles = useStyles();
     return (
-        <div>
-            <Typography className={styles.text} gutterBottom variant="h4">
-                {areaTitle || 'Title'}
-            </Typography>
-            <div className={styles.container}>
+        <Box>
+            <Title title={areaTitle}/>
+            <Box className={styles.container}>
                 {dataBooks?.map(
                     (data,index) => (
                         <Card
                             key={index}
-                            dataKey={data.key}
-                            name={data.title}
-                            imagePath={data.image}
-                            loggedIn={false}
+                            data={data}
+                            loggedIn={loggedIn}
+                            boolText={true}
                             imageHeight={imageHeight}
                             imageWidth={imageWidth}
                             routePath={routePath}
                         />)
                 )}
-            </div>
-        </div>
+            </Box>
+        </Box>
     )
 }
