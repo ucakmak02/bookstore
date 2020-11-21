@@ -1,6 +1,8 @@
 import React from 'react'
 import Box from '@material-ui/core/Box';
 import TextField from '@material-ui/core/TextField';
+import Button from '@material-ui/core/Button';
+import SaveIcon from '@material-ui/icons/Save';
 
 import { makeStyles } from '@material-ui/core/styles';
 
@@ -25,7 +27,7 @@ const useStyles = makeStyles((theme) => ({
       disabled: {}
   }));
 
-export default function DetailText({data,boolDisable}) {
+export default function DetailText({data,boolDisable,isButtonActive}) {
     const classes = useStyles();
     const [values, setValues] = React.useState({
         name: data?.title,
@@ -89,6 +91,17 @@ export default function DetailText({data,boolDisable}) {
                     variant="outlined"
                 />
             </Box>
+            <Box>
+            {isButtonActive || false ?
+            <Button
+                variant="contained"
+                color="default"
+                className={classes.button}
+                startIcon={<SaveIcon />}
+                >
+                Save Button
+            </Button>:null}
+          </Box>
         </Box>
     )
 }

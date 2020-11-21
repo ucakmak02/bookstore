@@ -23,6 +23,7 @@ export default function DetailPage() {
                 boolDisable={true}
                 imageWidth={300} 
                 imageHeight={400}
+                isAddProduct={false}
             />
         </Box>
     )

@@ -15,12 +15,14 @@ export default function EditPage() {
     const sourceData = location.state
     return (
         <Box className={styles.container}>
-            <Title title={'Detail Page'}/>
+            <Title title={'Edit Page'}/>
             <DetailBox 
                 data={sourceData} 
                 boolDisable={false}
                 imageWidth={300} 
                 imageHeight={400}
+                isAddProduct={false}
+                isButtonActive={true}
             />
         </Box>
     )
