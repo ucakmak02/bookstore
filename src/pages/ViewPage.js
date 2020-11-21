@@ -1,9 +1,10 @@
-import React from 'react'
+import React, {useContext} from 'react'
 import Box from '@material-ui/core/Box';
 import { useParams } from 'react-router-dom';
 import {Link} from 'react-router-dom'
 /* Import Style */
 import { layoutStyle } from '../components/Layout/theme'
+import {AuthContext} from "../context"
 /* Import Datas */
 import { books } from '../datas/books'
 
@@ -12,7 +13,7 @@ import CardList from '../components/Card/CardList';
 export default function ViewPage() {
     const { key } = useParams();
     const styles = layoutStyle();
-    console.log(key)
+    const [isLoggedIn] =useContext(AuthContext);
     return (
         <Box className={styles.container}>
             <CardList
@@ -22,7 +23,7 @@ export default function ViewPage() {
                 imageWidth={250}
                 routePath={'/detail'}
                 routeEditPath={'/edit'}
-                loggedIn={true}
+                loggedIn={isLoggedIn}
             />
             <Link to='/'>Go to Home</Link>
         </Box>

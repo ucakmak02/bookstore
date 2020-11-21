@@ -1,4 +1,4 @@
-import React,{useState} from 'react';
+import React,{useState, useContext} from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Box from '@material-ui/core/Box';
 import AppBar from '@material-ui/core/AppBar';
@@ -11,30 +11,33 @@ import MenuIcon from '@material-ui/icons/Menu';
 import Checkbox from '@material-ui/core/Checkbox';
 
 import { Link } from "react-router-dom";
+import {AuthContext} from "../../context";
 
 const useStyles = makeStyles((theme) => ({
-    toolbarStyle:{ 
+    toolbarStyle:{
         backgroundColor:'#666102',
     },
     leftSection: {
         flex:1,
         display:'flex',
         flexDirection:'row',
-        justifyContent:'flex-start',   
+        justifyContent:'flex-start',
         marginLeft:20 ,
     },
     rightSection: {
         flex:1,
         display:'flex',
         flexDirection:'row',
-        justifyContent:'flex-end',      
+        justifyContent:'flex-end',
     }
 }));
 
 export default function TopNavBar({name}) {
     const classes = useStyles();
-    const [LoggedIn,setLoggedIn] = useState(false)
+    // const [LoggedIn,setLoggedIn] = useState(false)
     const [checked, setChecked] = useState(true);
+    const [LoggedIn, setLoggedIn] = useContext(AuthContext);
+
     return (
         <Box className={classes.root}>
             <AppBar position="static">
@@ -59,8 +62,8 @@ export default function TopNavBar({name}) {
                             color='default'
                             inputProps={{ 'aria-label': 'primary checkbox' }}
                         />
-                        <Button  component={Link} to={'/login'} color="inherit"> LOGIN</Button>                     
-                    </div>           
+                        <Button  component={Link} to={'/login'} color="inherit"> LOGIN</Button>
+                    </div>
                 </Toolbar>
             </AppBar>
         </Box>
