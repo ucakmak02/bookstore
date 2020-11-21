@@ -3,9 +3,6 @@ import { makeStyles } from '@material-ui/core/styles';
 import { Card, CardActionArea } from "@material-ui/core";
 import CloudUploadTwoToneIcon from '@material-ui/icons/CloudUploadTwoTone';
 
-
-
-
 const useStyles = makeStyles({
   root: {
     minWidth: 275,
@@ -31,20 +28,20 @@ export default function UploadImageCard() {
       });
     }
   };
-/* For Post */
-/*   const handleUpload = async e => {
-    e.preventDefault();
-    const formData = new FormData();
-    formData.append("image", image.raw);
-
-    await fetch("YOUR_URL", {
-      method: "POST",
-      headers: {
-        "Content-Type": "multipart/form-data"
-      },
-      body: formData
-    });
-  }; */
+  /* For Post */
+  /*   const handleUpload = async e => {
+      e.preventDefault();
+      const formData = new FormData();
+      formData.append("image", image.raw);
+  
+      await fetch("YOUR_URL", {
+        method: "POST",
+        headers: {
+          "Content-Type": "multipart/form-data"
+        },
+        body: formData
+      });
+    }; */
 
   return (
     <Card className={classes.root}>

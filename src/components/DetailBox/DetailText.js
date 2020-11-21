@@ -1,52 +1,55 @@
 import React from 'react'
-import Box from '@material-ui/core/Box';
-import TextField from '@material-ui/core/TextField';
-import Button from '@material-ui/core/Button';
+import {
+    Box,
+    TextField,
+    Button
+} from '@material-ui/core';
+
 import SaveIcon from '@material-ui/icons/Save';
 
 import { makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles((theme) => ({
-    container:{
-        display:'flex',
-        flexDirection:'column',
-        textAlign:'center',
-        width:400,
+    container: {
+        display: 'flex',
+        flexDirection: 'column',
+        textAlign: 'center',
+        width: 400,
     },
-    text:{
-        width:400,
-        margin:10,
+    text: {
+        width: 400,
+        margin: 10,
     },
     inputRoot: {
         '&$disabled': {
-          color:'#666102',
-          fontWeight:600,
-          fontFamily:'Roboto'
+            color: '#666102',
+            fontWeight: 600,
+            fontFamily: 'Roboto'
         },
-      },
-      disabled: {}
-  }));
+    },
+    disabled: {}
+}));
 
-export default function DetailText({data,boolDisable,isButtonActive}) {
+export default function DetailText({ data, boolDisable, isButtonActive }) {
     const classes = useStyles();
     const [values, setValues] = React.useState({
         name: data?.title,
         author: data?.author,
         explanation: data?.content,
-      });
+    });
     const handleChange = (event) => {
         setValues({
-          ...values,
-          [event.target.name]: event.target.value,
+            ...values,
+            [event.target.name]: event.target.value,
         });
-      };
+    };
     return (
         <Box className={classes.container}>
             <Box >
                 <TextField
                     className={classes.text}
                     inputProps={{
-                        disabled: boolDisable||false,
+                        disabled: boolDisable || false,
                     }}
                     id="filled-multiline-static"
                     name='name'
@@ -62,7 +65,7 @@ export default function DetailText({data,boolDisable,isButtonActive}) {
                 <TextField
                     className={classes.text}
                     inputProps={{
-                        disabled: boolDisable||false,
+                        disabled: boolDisable || false,
                     }}
                     id="outlined-multiline-flexible"
                     name='author'
@@ -77,7 +80,7 @@ export default function DetailText({data,boolDisable,isButtonActive}) {
             <Box>
                 <TextField
                     inputProps={{
-                        disabled: boolDisable||false,
+                        disabled: boolDisable || false,
                     }}
                     className={classes.text}
                     name='explanation'
@@ -92,16 +95,16 @@ export default function DetailText({data,boolDisable,isButtonActive}) {
                 />
             </Box>
             <Box>
-            {isButtonActive || false ?
-            <Button
-                variant="contained"
-                color="default"
-                className={classes.button}
-                startIcon={<SaveIcon />}
-                >
-                Save Button
-            </Button>:null}
-          </Box>
+                {isButtonActive &&
+                    <Button
+                        variant="contained"
+                        color="default"
+                        className={classes.button}
+                        startIcon={<SaveIcon />}
+                    >
+                        Save Button
+            </Button>}
+            </Box>
         </Box>
     )
 }

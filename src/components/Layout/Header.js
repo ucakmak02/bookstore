@@ -1,38 +1,41 @@
-import React,{useState, useContext} from 'react';
+import React, { useState, useContext } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import Box from '@material-ui/core/Box';
-import AppBar from '@material-ui/core/AppBar';
-import Toolbar from '@material-ui/core/Toolbar';
-import Typography from '@material-ui/core/Typography';
-import Button from '@material-ui/core/Button';
-import IconButton from '@material-ui/core/IconButton';
+import {
+    Box,
+    AppBar,
+    Toolbar,
+    Typography,
+    Button,
+    Checkbox,
+    IconButton
+} from '@material-ui/core';
+
+
 import MenuIcon from '@material-ui/icons/Menu';
 
-import Checkbox from '@material-ui/core/Checkbox';
-
 import { Link } from "react-router-dom";
-import {AuthContext} from "../../context";
+import { AuthContext } from "../../context";
 
 const useStyles = makeStyles((theme) => ({
-    toolbarStyle:{
-        backgroundColor:'#666102',
+    toolbarStyle: {
+        backgroundColor: '#666102',
     },
     leftSection: {
-        flex:1,
-        display:'flex',
-        flexDirection:'row',
-        justifyContent:'flex-start',
-        marginLeft:20 ,
+        flex: 1,
+        display: 'flex',
+        flexDirection: 'row',
+        justifyContent: 'flex-start',
+        marginLeft: 20,
     },
     rightSection: {
-        flex:1,
-        display:'flex',
-        flexDirection:'row',
-        justifyContent:'flex-end',
+        flex: 1,
+        display: 'flex',
+        flexDirection: 'row',
+        justifyContent: 'flex-end',
     }
 }));
 
-export default function TopNavBar({name}) {
+export default function TopNavBar({ name }) {
     const classes = useStyles();
     // const [LoggedIn,setLoggedIn] = useState(false)
     const [checked, setChecked] = useState(true);
@@ -46,23 +49,23 @@ export default function TopNavBar({name}) {
                         <MenuIcon />
                     </IconButton>
                     <Typography variant="h6" className={classes.title}>
-                        {name||'Nameless'}
+                        {name || 'Nameless'}
                     </Typography>
                     <div className={classes.leftSection}>
                         <Button component={Link} to={'/'} color="inherit">HOME</Button>
                         <Button className={classes.lastButton} component={Link} to={'/view'} color="inherit"> VIEW</Button>
                     </div>
                     <div className={classes.rightSection}>
-                        {LoggedIn?
-                            <Button  component={Link} to={'/addNewProduct'} color="inherit"> Add New Product</Button>
-                        :null}
+                        {LoggedIn &&
+                            <Button component={Link} to={'/addNewProduct'} color="inherit"> Add New Product</Button>
+                        }
                         <Checkbox
                             checked={checked}
-                            onChange={() => {setChecked(!checked);setLoggedIn(!LoggedIn)}}
+                            onChange={() => { setChecked(!checked); setLoggedIn(!LoggedIn) }}
                             color='default'
                             inputProps={{ 'aria-label': 'primary checkbox' }}
                         />
-                        <Button  component={Link} to={'/login'} color="inherit"> LOGIN</Button>
+                        <Button component={Link} to={'/login'} color="inherit"> LOGIN</Button>
                     </div>
                 </Toolbar>
             </AppBar>

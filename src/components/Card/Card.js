@@ -1,15 +1,15 @@
-import React , { useContext } from 'react';
-import {HomeContext} from '../../pages/HomePage'
+import React, { useContext } from 'react';
+import { HomeContext } from '../../pages/HomePage'
 import { makeStyles } from '@material-ui/core/styles';
 import {
-        Card,
-        CardActionArea,
-        CardActions,
-        CardMedia,
-        CardContent,
-        Button,
-        Typography
-      } from '@material-ui/core';
+  Card,
+  CardActionArea,
+  CardActions,
+  CardMedia,
+  CardContent,
+  Button,
+  Typography
+} from '@material-ui/core';
 import DeleteIcon from '@material-ui/icons/Delete';
 import EditOutlinedIcon from '@material-ui/icons/EditOutlined';
 
@@ -31,7 +31,7 @@ const useStyles = makeStyles({
   }
 });
 
-export default function MediaCard({ data, loggedIn, boolText, imageHeight, imageWidth, routePath,routeEditPath }) {
+export default function MediaCard({ data, loggedIn, boolText, imageHeight, imageWidth, routePath, routeEditPath }) {
   const classes = useStyles();
   /* Use Context Example */
   const ContextData = useContext(HomeContext);

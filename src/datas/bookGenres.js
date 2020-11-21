@@ -1,8 +1,8 @@
 export const dataBookGenres = [
     {
-      id: 'history',
-      title: 'Historic Books',
-      image: 'https://static.onecms.io/wp-content/uploads/sites/23/2014/06/10/stack-of-classic-novels.jpg',
+        id: 'history',
+        title: 'Historic Books',
+        image: 'https://static.onecms.io/wp-content/uploads/sites/23/2014/06/10/stack-of-classic-novels.jpg',
     },
     {
         id: 'fantasy',
@@ -29,4 +29,4 @@ export const dataBookGenres = [
         title: 'Short Story Books',
         image: 'https://www.austinmacauley.com/sites/default/files/styles/adaptive_general/public/9781787101340.jpg',
     },
-  ];
+];

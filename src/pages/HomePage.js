@@ -1,5 +1,5 @@
-import React ,{createContext }from 'react'
-import Box from '@material-ui/core/Box';
+import React, { createContext } from 'react'
+import { Box } from '@material-ui/core';
 /* import Container from '@material-ui/core/Container'; */
 /* Import Style */
 import { layoutStyle } from '../components/Layout/theme'
@@ -9,14 +9,14 @@ import { dataBookGenres } from '../datas/bookGenres'
 import PresentationArea from '../components/PresentationArea/PresentationArea';
 import CardList from '../components/Card/CardList';
 
-export const HomeContext  = createContext();
+export const HomeContext = createContext();
 const ContextData = {
     dataBooks: dataBookGenres,
-    areaTitle:'Book Genres',
-    imageHeight:200,
-    imageWidth:360,
-    routePath:'/view'
-  };
+    areaTitle: 'Book Genres',
+    imageHeight: 200,
+    imageWidth: 360,
+    routePath: '/view'
+};
 export default function HomePage() {
     const styles = layoutStyle();
     return (

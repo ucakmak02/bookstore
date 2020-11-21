@@ -1,7 +1,6 @@
 import React from 'react'
-import Box from '@material-ui/core/Box';
+import { Box, Typography } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
-import Typography from '@material-ui/core/Typography';
 
 const useStyles = makeStyles((theme) => ({
     text: {
@@ -12,13 +11,13 @@ const useStyles = makeStyles((theme) => ({
     }
 }));
 
-export default function Title({title}) {
+export default function Title({ title }) {
     const styles = useStyles();
     return (
         <Box>
             <Typography className={styles.text} gutterBottom variant="h4">
-                {title || 'Title'} 
-            </Typography>    
+                {title || 'Title'}
+            </Typography>
         </Box>
     )
 }

@@ -1,7 +1,7 @@
 import React from 'react'
 import { useLocation } from 'react-router-dom';
 /* Import Components */
-import Box from '@material-ui/core/Box';
+import { Box } from '@material-ui/core';
 import Title from '../components/Title/Title'
 import DetailBox from '../components/DetailBox/DetailBox'
 /* import DetailText from '../components/DetailBox/DetailText' */
@@ -15,11 +15,11 @@ export default function EditPage() {
     const sourceData = location.state
     return (
         <Box className={styles.container}>
-            <Title title={'Edit Page'}/>
-            <DetailBox 
-                data={sourceData} 
+            <Title title={'Edit Page'} />
+            <DetailBox
+                data={sourceData}
                 boolDisable={false}
-                imageWidth={300} 
+                imageWidth={300}
                 imageHeight={400}
                 isAddProduct={false}
                 isButtonActive={true}
